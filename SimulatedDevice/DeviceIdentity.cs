@@ -9,6 +9,7 @@ namespace SimulatedDevice
 {
     class DeviceIdentity
     {
+        public static string DevicePublicKey = null;
         private static RegistryManager _registryManager;
         private const string ConnectionString = "HostName=Team33Hub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=jOMoVfLXXRadyke4fHP1M7K71PO/k21vYDFy+NDWnCU=";
         private const string Name = "Team 33 Device ?";
@@ -18,7 +19,7 @@ namespace SimulatedDevice
         private static readonly Configuration Config = ConfigurationManager.OpenExeConfiguration(System.IO.Path.Combine(
             Environment.CurrentDirectory, System.Reflection.Assembly.GetExecutingAssembly().ManifestModule.Name));
 
-        public static async Task<string> SetupDeviceAsync(string deviceId)
+        public static async Task SetupDeviceAsync(string deviceId)
         {
             Device device;
             try
@@ -40,7 +41,7 @@ namespace SimulatedDevice
 
             Console.WriteLine($"device key : {device.Authentication.SymmetricKey.PrimaryKey}");
 
-            return device.Authentication.SymmetricKey.PrimaryKey;
+            DevicePublicKey =  device.Authentication.SymmetricKey.PrimaryKey;
         }
 
         private static void SendTelemetry(string eventName, string message)
