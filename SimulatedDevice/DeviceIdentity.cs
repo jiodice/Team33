@@ -24,6 +24,7 @@ namespace SimulatedDevice
             Device device;
             try
             {
+                _registryManager = RegistryManager.CreateFromConnectionString(ConnectionString);
                 device = await _registryManager.AddDeviceAsync(new Device(deviceId));
                 SendTelemetry("success", "register new device");
             }
