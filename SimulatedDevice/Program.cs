@@ -26,6 +26,7 @@ namespace SimulatedDevice
             Console.WriteLine("Simulated device\n");
             _deviceClient = DeviceClient.Create(IotHubUri, new DeviceAuthenticationWithRegistrySymmetricKey(DeviceId, devicePublicKey), TransportType.Mqtt);
             SimulateMessage.SendMessagesAsync(_deviceClient);
+            Console.ReadLine();
         }
 
     }
