@@ -14,8 +14,7 @@ namespace SimulatedDevice
         {
             //Setup device in Azure
             DeviceIdentity.SetupDeviceAsync(DeviceId).Wait();
-
-            public string devicePublicKey = DeviceIdentity.DevicePublicKey;
+            string devicePublicKey = DeviceIdentity.DevicePublicKey;
         }
     }
 }
