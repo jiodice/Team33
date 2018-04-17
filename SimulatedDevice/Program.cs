@@ -10,6 +10,11 @@ namespace SimulatedDevice
     {
         static void Main(string[] args)
         {
+            //hello
+            
+        }
+        private void donothing(){
+            
         }
     }
 }
