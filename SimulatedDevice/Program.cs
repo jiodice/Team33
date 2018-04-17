@@ -16,14 +16,17 @@ namespace SimulatedDevice
         public static void Main(string[] args)
         {
             //Setup device in Azure
-            DeviceId = "Team33 Device [" + Environment.MachineName + "]";
+            DeviceId = "Team33-Device-" + Environment.MachineName;
             DeviceIdentity.SetupDeviceAsync(DeviceId, ConnectionString).Wait();
             string devicePublicKey = DeviceIdentity.DevicePublicKey;
+            StartSimulation(devicePublicKey);
         }
         private static void StartSimulation(string devicePublicKey)
         {
             Console.WriteLine("Simulated device\n");
             _deviceClient = DeviceClient.Create(IotHubUri, new DeviceAuthenticationWithRegistrySymmetricKey(DeviceId, devicePublicKey), TransportType.Mqtt);
+            SimulateMessage.SendMessagesAsync(_deviceClient);
         }
+
     }
 }

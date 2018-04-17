@@ -11,7 +11,7 @@ namespace SimulatedDevice
 {
     public static class SimulateMessage
     {
-        private static async void SendMessagesAsync(Microsoft.Azure.Devices.Client.DeviceClient _deviceClient)
+        public static async void SendMessagesAsync(Microsoft.Azure.Devices.Client.DeviceClient _deviceClient)
         {
             while (true)
             {
