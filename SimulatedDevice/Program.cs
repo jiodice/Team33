@@ -10,8 +10,8 @@ namespace SimulatedDevice
     class Program
     {
         public static string DeviceId;
-        private const string ConnectionString = "HostName=Team33Hub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=jOMoVfLXXRadyke4fHP1M7K71PO/k21vYDFy+NDWnCU=";
-        private const string IotHubUri = "Team33Hub.azure-devices.net";
+        private const string ConnectionString = "HostName=Team33HubEast.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=sp+bEjC8Rof2bEuwMZ+qW+/vtc03wKr3vcmXOYZKVp4=";
+        private const string IotHubUri = "Team33HubEast.azure-devices.net";
         private static DeviceClient _deviceClient;
         public static void Main(string[] args)
         {
